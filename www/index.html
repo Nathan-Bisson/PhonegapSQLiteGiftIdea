@@ -1,0 +1,75 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="handheldfriendly" content="true" />
+<meta name="mobileoptimized" content="240" />
+<meta name="viewport" content="width=device-width,initial-scale=1,target-densitydpi=device-dpi" />
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=3">
+
+<link href="css/index.css" rel="stylesheet" type="text/css">
+<script src="cordova.js"></script>
+<title>SQLite</title>
+</head>
+
+<body>
+<nav class="tabs">
+		<ul>
+			<li class="tab">
+                <a href="#view" data-role="link" id="viewTab" class="activetab"><img class="icon" src="img/eye.svg"/></a>
+    		</li>
+    		<li class="tab">
+    			<a href="#person" data-role="link" id="personTab" class><img class="icon" src="img/user.svg"/></a>
+    		</li>
+           <li class="tab">
+    			<a href="#occasion" data-role="link" id="occasionTab" class><img class="icon" src="img/calendar_alt_stroke.svg"/></a>
+    		</li>
+            <li class="tab">
+    			<a href="#gift" data-role="link" id="giftTab" class><img class="icon"  src="img/plus.svg"/></a>
+    		</li>
+		</ul>
+	</nav>
+    
+    <section data-role="page" id="view" class="active">
+        <h1>Gift Ideas</h1>
+        <form>
+            <select name="viewList" id="viewList" class="selectList">
+            </select>  
+            <div id="result"> 
+            </div>
+        </form>
+      </section>
+   
+    <section data-role="page" id="person" class="hide">
+        <h1>Add Person</h1>
+        <form name="personForm" action="">
+            <input type="text" name="personSubmit" placeholder="Person" value="" class="inputBox"> <br>
+            <input type="button" class="pushButton" name="personSave" value="Save" onclick="setName(this.form)"> 
+        </form>
+    </section>
+    
+    <section data-role="page" id="occasion" class="hide">
+        <h1>Add Occasion</h1>
+        <form name="occasionForm" action="">
+            <input type="text" name="occasionSubmit" placeholder="Occasion" value="" class="inputBox"> <br>
+            <input type="button" class="pushButton" name="occasionSave" value="Save" onclick="setOccasion(this.form)"> 
+        </form>
+     </section>
+    
+    <section data-role="page" id="gift" class="hide">
+        <h1>Add Gift</h1>
+        <form name="giftForm" action="">
+            <select name="occasionList" id="listOccasion" class="selectList">
+            </select>
+            <select name="peopleList" id="listPeople" class="selectList">
+            </select>
+            <input type="text" name="giftIdea" placeholder="Gift Idea" value="" class="inputBox">
+            <input type="button" class="pushButton" name="giftSubmit" value="Submit" onclick="submitIdea(this.form)">
+        </form>
+    </section>
+
+<script src="js/index.js"></script> 
+</body>
+</html>
